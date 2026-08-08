@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pro-cultura</title>
+
+
+    <!-- =========================================
+         GOOGLE FONTS
+    ========================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================
+         CSS
+         Todo el CSS está dentro de este archivo.
+    ========================================== -->
+
+    <style>
+
+        /* =========================================
+           VARIABLES
+        ========================================== */
+
+        :root {
+
+            --background: #53001a;
+
+            --paper: #e9d7a5;
+
+            --paper-dark: #a8bd4c;
+
+            --primary: #710000;
+
+            --secondary: #710000;
+
+            --text: #2d241d;
+
+            --text-light: #f4ead8;
+
+            --border: #53001a;
+
+            --radius: 28px;
+
+        }
+
+
+        /* =========================================
+           RESET
+        ========================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family: "Montserrat", sans-serif;
+
+            background: var(--background);
+
+            color: var(--text);
+
+            min-height: 100vh;
+
+        }
+
+
+        /* =========================================
+           PAGE
+        ========================================== */
+
+        .page {
+
+            width: min(900px, 94%);
+
+            margin: 35px auto;
+
+            background: var(--paper);
+
+            border: 3px solid var(--border);
+
+            border-radius: 35px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, .18);
+
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================== */
+
+        .header {
+
+            height: 105px;
+
+            padding: 20px 35px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+
+            background: var(--paper-dark);
+
+            border-bottom: 3px solid var(--border);
+
+        }
+
+
+        /* LOGO */
+
+        .logo {
+
+            min-width: 175px;
+
+            padding: 12px 20px;
+
+            border: 2px solid var(--border);
+
+            border-radius: 18px;
+
+            background: var(--paper);
+
+            text-align: center;
+
+            font-family: "DM Serif Display", serif;
+
+            font-size: 18px;
+
+        }
+
+
+        /* SEARCH */
+
+        .search-bar {
+
+            flex: 1;
+
+            height: 55px;
+
+            border: 3px solid var(--border);
+
+            border-radius: 30px;
+
+            background: rgba(255, 255, 255, .15);
+
+        }
+
+
+        /* ICONS */
+
+        .header-icons {
+
+            display: flex;
+
+            gap: 12px;
+
+        }
+
+
+        .icon-button {
+
+            width: 55px;
+
+            height: 55px;
+
+            border-radius: 50%;
+
+            border: 3px solid var(--border);
+
+            background: var(--primary);
+
+            color: var(--text-light);
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            transition: .25s;
+
+        }
+
+
+        .icon-button:hover {
+
+            transform: translateY(-4px);
+
+        }
+
+
+        /* =========================================
+           PROFILE
+        ========================================== */
+
+        .profile {
+
+            margin: 20px;
+
+            padding: 18px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+
+            background: var(--secondary);
+
+            border: 3px solid var(--border);
+
+            border-radius: 25px;
+
+        }
+
+
+        /* FOTO */
+
+        .profile-image {
+
+            width: 210px;
+
+            height: 210px;
+
+            border-radius: 50%;
+
+            border: 5px solid var(--border);
+
+            overflow: hidden;
+
+            flex-shrink: 0;
+
+            background: var(--paper);
+
+        }
+
+
+        .profile-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+        }
+
+
+        /* PROFILE INFO */
+
+        .profile-info {
+
+            flex: 1;
+
+        }
+
+
+        .profile-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+
+            color: var(--text-light);
+
+        }
+
+
+        .profile-title h1 {
+
+            font-family: "DM Serif Display", serif;
+
+            font-size: 38px;
+
+        }
+
+
+        .profile-title span {
+
+            font-family: "DM Serif Display", serif;
+
+            font-size: 20px;
+
+        }
+
+
+        .symbol {
+
+            font-size: 30px !important;
+
+        }
+
+
+        /* =========================================
+           PROFILE BUTTONS
+        ========================================== */
+
+        .profile-buttons {
+
+            margin-top: 20px;
+
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .profile-buttons a {
+
+            padding: 12px 28px;
+
+            border-radius: 25px;
+
+            border: 2px solid var(--border);
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            transition: .2s;
+
+        }
+
+
+        .status {
+
+            background: var(--paper);
+
+            color: var(--text);
+
+        }
+
+
+        .queue {
+
+            background: var(--primary);
+
+            color: var(--text-light);
+
+        }
+
+
+        .profile-buttons a:hover {
+
+            transform: translateY(-3px);
+
+        }
+
+
+        /* =========================================
+           CONTENT
+        ========================================== */
+
+        .content {
+
+            padding: 20px 35px 30px;
+
+        }
+
+
+        /* =========================================
+           CORE VIBES
+        ========================================== */
+
+        .core-vibes {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+
+        }
+
+
+        /* TITLE */
+
+        .section-title {
+
+            grid-column: 1;
+
+            background: var(--primary);
+
+            color: var(--text-light);
+
+            padding: 18px 25px;
+
+            border-radius: 15px;
+
+            font-family: "DM Serif Display", serif;
+
+            font-size: 23px;
+
+            border: 3px solid var(--border);
+
+        }
+
+
+        /* INFO CARD */
+
+        .info-card {
+
+            grid-column: 1;
+
+            padding: 25px;
+
+            background: var(--paper);
+
+            border: 3px solid var(--border);
+
+            border-radius: 20px;
+
+            text-align: center;
+
+        }
+
+
+        .info-card h2 {
+
+            font-family: "DM Serif Display", serif;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .info-card p {
+
+            margin: 8px 0;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =========================================
+           TAGS
+        ========================================== */
+
+        .tags {
+
+            grid-column: 1;
+
+            padding: 15px;
+
+            background: var(--primary);
+
+            border-radius: 15px;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+        }
+
+
+        .tags span {
+
+            background: var(--paper);
+
+            padding: 6px 12px;
+
+            border-radius: 15px;
+
+            font-size: 12px;
+
+        }
+
+
+        /* =========================================
+           ARTISTS / MISIÓN
+        ========================================== */
+
+        .artists {
+
+            grid-column: 2;
+
+            grid-row: 1 / span 3;
+
+            padding: 20px;
+
+            border: 3px solid var(--border);
+
+            border-radius: 20px;
+
+            background: var(--paper);
+
+            scroll-margin-top: 25px;
+
+        }
+
+
+        /* ARTIST TITLE */
+
+        .artist-title {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 15px;
+
+            background: var(--primary);
+
+            color: var(--text-light);
+
+            border-radius: 12px;
+
+        }
+
+
+        .artist-title h2 {
+
+            font-family: "DM Serif Display", serif;
+
+            font-size: 24px;
+
+        }
+
+
+        .artist-title span {
+
+            font-size: 25px;
+
+        }
+
+
+        /* ARTIST CONTENT */
+
+        .artist-content {
+
+            padding: 20px 10px;
+
+        }
+
+
+        .artist-content p {
+
+            margin-bottom: 12px;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* ARTIST LIST */
+
+        .artist-list {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+        }
+
+
+        .artist-list span {
+
+            padding: 7px 12px;
+
+            background: var(--primary);
+
+            color: var(--text-light);
+
+            border-radius: 15px;
+
+            font-size: 12px;
+
+        }
+
+
+        /* =========================================
+           THREE CARDS
+        ========================================== */
+
+        .cards-container {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 15px;
+
+            margin-top: 25px;
+
+        }
+
+
+        /* CARD */
+
+        .info-box {
+
+            border: 3px solid var(--border);
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            background: var(--paper);
+
+        }
+
+
+        /* CARD TITLE */
+
+        .box-title {
+
+            padding: 15px 10px;
+
+            text-align: center;
+
+            background: var(--primary);
+
+            color: var(--text-light);
+
+            font-family: "DM Serif Display", serif;
+
+            font-size: 20px;
+
+        }
+
+
+        /* CARD CONTENT */
+
+        .box-content {
+
+            padding: 18px;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+
+        }
+
+
+        .box-content p {
+
+            margin-bottom: 12px;
+
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================== */
+
+        .navigation {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 10px;
+
+            padding: 20px 30px;
+
+            background: var(--paper-dark);
+
+            border-top: 3px solid var(--border);
+
+        }
+
+
+        .navigation a {
+
+            padding: 15px;
+
+            background: var(--primary);
+
+            color: var(--text-light);
+
+            text-align: center;
+
+            text-decoration: none;
+
+            border-radius: 25px;
+
+            border: 2px solid var(--border);
+
+            font-family: "DM Serif Display", serif;
+
+            font-size: 20px;
+
+            transition: .2s;
+
+        }
+
+
+        .navigation a:hover {
+
+            transform: translateY(-3px);
+
+            background: var(--secondary);
+
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================== */
+
+        .footer {
+
+            padding: 20px;
+
+            text-align: center;
+
+            background: var(--paper-dark);
+
+            border-top: 2px dashed var(--border);
+
+            font-size: 12px;
+
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================== */
+
+        @media (max-width: 700px) {
+
+
+            .page {
+
+                width: 96%;
+
+                margin: 15px auto;
+
+                border-radius: 25px;
+
+            }
+
+
+            /* HEADER */
+
+            .header {
+
+                height: auto;
+
+                padding: 15px;
+
+                flex-wrap: wrap;
+
+                gap: 12px;
+
+            }
+
+
+            .logo {
+
+                min-width: 0;
+
+                flex: 1;
+
+            }
+
+
+            .search-bar {
+
+                order: 3;
+
+                flex-basis: 100%;
+
+            }
+
+
+            /* PROFILE */
+
+            .profile {
+
+                flex-direction: column;
+
+                text-align: center;
+
+            }
+
+
+            .profile-image {
+
+                width: 170px;
+
+                height: 170px;
+
+            }
+
+
+            .profile-title {
+
+                justify-content: center;
+
+            }
+
+
+            .profile-buttons {
+
+                justify-content: center;
+
+                flex-wrap: wrap;
+
+            }
+
+
+            /* CONTENT */
+
+            .content {
+
+                padding: 15px;
+
+            }
+
+
+            .core-vibes {
+
+                display: flex;
+
+                flex-direction: column;
+
+            }
+
+
+            .artists {
+
+                margin-top: 20px;
+
+            }
+
+
+            /* THREE CARDS */
+
+            .cards-container {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            /* NAVIGATION */
+
+            .navigation {
+
+                grid-template-columns: 1fr;
+
+                padding: 15px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="page">
+
+
+        <!-- =========================================
+             HEADER
+        ========================================== -->
+
+        <header class="header">
+
+
+            <div class="logo">
+
+                By: golserp
+
+            </div>
+
+
+            <div class="search-bar">
+
+                <span></span>
+
+            </div>
+
+
+            <div class="header-icons">
+
+
+                <button class="icon-button">
+                    ♣
+                </button>
+
+
+                <button class="icon-button">
+                    ●
+                </button>
+
+
+                <button class="icon-button">
+                    ★
+                </button>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =========================================
+             PERFIL / HERO
+        ========================================== -->
+
+        <section class="profile">
+
+
+            <div class="profile-image">
+
+                <img
+                    src="https://i.pinimg.com/736x/4c/4c/5d/4c4c5dc2f8b14ec2ef9f020d123f9a1b.jpg"
+                    alt="usagiperuano"
+                >
+
+            </div>
+
+
+            <div class="profile-info">
+
+
+                <div class="profile-title">
+
+                    <h1>Pro-cultura</h1>
+
+                    <span class="symbol">✦</span>
+
+                    <span>info / info / info</span>
+
+                </div>
+
+
+                <div class="profile-buttons">
+
+
+                    <!-- BOTÓN INICIO -->
+
+                    <a
+                        href="#inicio"
+                        class="status"
+                    >
+                        Inicio
+                    </a>
+
+
+                    <!-- BOTÓN INFO
+                         Lleva a Nuestra Misión -->
+
+                    <a
+                        href="#mision"
+                        class="queue"
+                    >
+                        INFO
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             CONTENIDO PRINCIPAL
+        ========================================== -->
+
+        <main
+            class="content"
+            id="inicio"
+        >
+
+
+            <!-- =====================================
+                 SOBRE NOSOTROS
+            ====================================== -->
+
+            <section class="core-vibes">
+
+
+                <div class="section-title">
+
+                    SOBRE NOSOTROS
+
+                </div>
+
+
+                <div class="info-card">
+
+
+                    <h2>
+                        ¿Quiénes somos?
+                    </h2>
+
+
+                    <p>
+
+                        ♡ Nos presentamos como un grupo
+                        de personas que desean educar a
+                        los demás a través de este movimiento.
+                        En nuestro blog te ofrecemos información
+                        variada acerca de distintos temas
+                        mundiales, así como también ayudarte
+                        a reconocer tus derechos como ciudadano.
+
+                    </p>
+
+
+                    <p>
+
+                        Te ofrecemos una biblioteca amplia
+                        de PDFs a los que podrás acceder
+                        libremente.
+
+                    </p>
+
+
+                </div>
+
+
+                <div class="tags">
+
+                    <span>LUCHAMOS</span>
+
+                    <span>POR</span>
+
+                    <span>TI</span>
+
+                </div>
+
+
+                <!-- =====================================
+                     NUESTRA MISIÓN
+                ====================================== -->
+
+                <section
+                    id="mision"
+                    class="artists"
+                >
+
+
+                    <div class="artist-title">
+
+
+                        <span>✦</span>
+
+
+                        <h2>
+                            NUESTRA MISIÓN
+                        </h2>
+
+
+                    </div>
+
+
+                    <div class="artist-content">
+
+
+                        <p>
+
+                            Buscamos informarnos e informar
+                            a los demás, pues sabemos que
+                            nuestra tierra ha sido tomada y
+                            no dejaremos que nos quiten lo
+                            nuestro, no sin antes haber
+                            luchado por ello.
+
+                        </p>
+
+
+                    </div>
+
+
+                    <div class="artist-list">
+
+
+                        <span>
+                            INFORMATE
+                        </span>
+
+
+                        <span>
+                            LUCHA
+                        </span>
+
+
+                        <span>
+                            COMUNICA
+                        </span>
+
+
+                        <span>
+                            ORGANIZATE
+                        </span>
+
+
+                    </div>
+
+
+                </section>
+
+
+            </section>
+
+
+
+            <!-- =====================================
+                 TRES COLUMNAS
+            ====================================== -->
+
+            <section class="cards-container">
+
+
+                <!-- CARD 1 -->
+
+                <article class="info-box">
+
+
+                    <div class="box-title">
+
+                        ¡SUCEDE AHORA!
+
+                    </div>
+
+
+                    <div class="box-content">
+
+
+                        <p>
+
+                            Coca-Cola planea invertir
+                            1.000 millones de dólares
+                            en el Perú con supuesto fin
+                            de ayudar al ecosistema pero
+                            en realidad privatizarán el agua.
+
+                        </p>
+
+
+                        <p>
+
+                            ✦ NO TE DEJES ENGAÑAR!!
+
+                        </p>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- CARD 2 -->
+
+                <article class="info-box">
+
+
+                    <div class="box-title">
+
+                        FLOCK CAMARAS
+
+                    </div>
+
+
+                    <div class="box-content">
+
+
+                        <p>
+
+                            ♥ ¿Por qué estar en contra?
+
+                        </p>
+
+
+                        <p>
+
+                            ✦ Con esas cámaras te
+                            mantendrán vigilado y perderás
+                            tu privacidad, posibilidad del
+                            abuso de autoridad y sobre todo
+                            ¿Por qué uno de los países con
+                            alta tasa de pedofilia querría
+                            vigilarte?
+
+                        </p>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- CARD 3 -->
+
+                <article class="info-box">
+
+
+                    <div class="box-title">
+
+                        NESTLE BABY KILLERS
+
+                    </div>
+
+
+                    <div class="box-content">
+
+
+                        <p>
+
+                            Nestlé, acusado de la muerte
+                            y desnutrición de bebés y niños
+                            en países de bajo desarrollo,
+                            bajo la premisa de que su leche
+                            en polvo era un sustituto de
+                            la leche materna.
+
+                        </p>
+
+
+                    </div>
+
+
+                </article>
+
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- =========================================
+             NAVEGACIÓN
+        ========================================== -->
+
+        <nav class="navigation">
+
+
+            <!-- WHATSAPP -->
+
+            <a
+                href="https://whatsapp.com/channel/0029Vb7fMr56GcGFIgECBe1P"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                WHATSAPP
+            </a>
+
+
+            <!-- BLOGGER -->
+
+            <a
+                href="https://movimientoprocultura.blogspot.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                BLOGGER
+            </a>
+
+
+            <!-- GOOGLE DRIVE -->
+
+            <a
+                href="https://drive.google.com/drive/folders/1wz7zZVZ3GExYb1VZlxn1GChtLcILGL67?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                DRIVE
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- =========================================
+             FOOTER
+        ========================================== -->
+
+        <footer class="footer">
+
+
+            <p>
+
+                © 2026 COPYRIGHT
+
+            </p>
+
+
+        </footer>
+
+
+    </div>
+
+
+</body>
+
+</html>
